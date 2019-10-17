@@ -22,10 +22,9 @@ class ScoreViewController: UIViewController {
     //secuenceOrder.text = currentOrder
     
     
-    @IBAction func imgButton1(_ sender: Any) {
-        print("0")
+    @IBAction func imgButton1(_ sender: UIButton) {
+        print(sender.imageView?.image)
         currentOrder+=1
-        //secuenceOrder.text = currentOrder
     }
     @IBAction func imgButton2(_ sender: Any) {
         print("1")
@@ -35,6 +34,7 @@ class ScoreViewController: UIViewController {
         print("2")
         currentOrder+=1
     }
+    
     
     @IBAction func imgButton4(_ sender: Any) {
         print("3")
@@ -48,5 +48,6 @@ class ScoreViewController: UIViewController {
         print("5")
         currentOrder+=1
     }
+    
 }
 
