@@ -25,28 +25,36 @@ class ViewController: UIViewController {
         #imageLiteral(resourceName: "img6")
     ]
 
+
+    @IBOutlet weak var textoIntro: UILabel!
     @IBOutlet weak var StartButton: UIButton!
     @IBOutlet weak var picsSecuence: UIImageView!
     @IBAction func StartButton(_ sender: Any) {
         self.StartButton.isHidden = true
         self.picsSecuence.isHidden = false
+        self.textoIntro.isHidden = true
         imageSecuence()
     }
     
     func imageSecuence() {
+        
         //orden aleatorio elemntos array
         imageArray.shuffle()
         let shuffledIMG = imageArray.shuffled()
-        //mostrar secuencia por orden
         
-        var i = 0
-        repeat {
-            picsSecuence.image = shuffledIMG[i]
-            //print(shuffledIMG[i])
-            i+=1
-            } while i < 6
-            //picsSecuence.image = shuffledIMG[i]
+        picsSecuence.image = shuffledIMG[0]
         
+        var seconds: Double = 0
+        for i in 1...5 {
+            print(i)
+            seconds+=1
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                //self.picsSecuence.image = shuffledIMG[i]
+                let j = i
+                print ("j: ", j)
+                self.picsSecuence.image = self.imageArray[j]
+            }
         }
-    
+        
+    }
 }
