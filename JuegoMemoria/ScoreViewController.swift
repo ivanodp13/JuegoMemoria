@@ -13,40 +13,66 @@ class ScoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        secuenceOrder.text="1"
+        currentPoints.text="Puntos: 0"
+        
     }
 
     
     @IBOutlet weak var secuenceOrder: UILabel!
-    var currentOrder: Int = 0
-    //asignar string al label
-    //secuenceOrder.text = currentOrder
+    @IBOutlet weak var currentPoints: UILabel!
+    
+    var currentOrder : Int = 1
+    var currentClic : Int = 0
+    //var currentPoints : Int = 0
+    var points : Int = 0
     
     
     @IBAction func imgButton1(_ sender: UIButton) {
-        print(sender.imageView?.image)
-        currentOrder+=1
+        let buttonImg: UIImage = (sender.imageView?.image!)!
+        imgActionButton(imageButton: buttonImg)
     }
-    @IBAction func imgButton2(_ sender: Any) {
-        print("1")
-        currentOrder+=1
+    @IBAction func imgButton2(_ sender: UIButton) {
+        let buttonImg: UIImage = (sender.imageView?.image!)!
+        imgActionButton(imageButton: buttonImg)
     }
-    @IBAction func imgButton3(_ sender: Any) {
-        print("2")
-        currentOrder+=1
+    @IBAction func imgButton3(_ sender: UIButton) {
+        let buttonImg: UIImage = (sender.imageView?.image!)!
+        imgActionButton(imageButton: buttonImg)
     }
     
     
-    @IBAction func imgButton4(_ sender: Any) {
-        print("3")
-        currentOrder+=1
+    @IBAction func imgButton4(_ sender: UIButton) {
+        let buttonImg: UIImage = (sender.imageView?.image!)!
+        imgActionButton(imageButton: buttonImg)
     }
-    @IBAction func imgButton5(_ sender: Any) {
-        print("4")
-        currentOrder+=1
+    @IBAction func imgButton5(_ sender: UIButton) {
+        let buttonImg: UIImage = (sender.imageView?.image!)!
+        imgActionButton(imageButton: buttonImg)
     }
-    @IBAction func imgButton6(_ sender: Any) {
-        print("5")
-        currentOrder+=1
+    @IBAction func imgButton6(_ sender: UIButton) {
+        let buttonImg: UIImage = (sender.imageView?.image!)!
+        imgActionButton(imageButton: buttonImg)
+    }
+    
+    func imgActionButton(imageButton: UIImage){
+        if (currentOrder<6){
+            currentOrder+=1
+        }
+        currentClic+=1
+        print ("Current Clic: ",currentClic)
+        let currentOrderStr = String(currentOrder)
+        secuenceOrder.text = currentOrderStr
+        print ("Image: ",imageButton)
+        
+        if(shuffledIMG[currentClic-1]==imageButton){
+            points+=1
+            let pointsText: String = ("Puntos: \(points)")
+            let currentPointsStr = String(pointsText)
+            currentPoints.text = currentPointsStr
+        }else{
+            print ("No son iguales")
+        }
     }
     
 }

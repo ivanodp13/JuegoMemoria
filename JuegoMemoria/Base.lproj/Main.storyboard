@@ -36,10 +36,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="nYa-Pz-gFQ">
-                                <rect key="frame" x="31" y="434" width="352" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtG-4q-NPN">
                                 <rect key="frame" x="102" y="654" width="211" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -56,7 +52,6 @@
                     <connections>
                         <outlet property="StartButton" destination="xtG-4q-NPN" id="EcD-zt-mnK"/>
                         <outlet property="levelLabel" destination="i0b-UB-syu" id="qeI-wL-027"/>
-                        <outlet property="levelSlider" destination="nYa-Pz-gFQ" id="2ld-YJ-rJw"/>
                         <outlet property="picsSecuence" destination="sFu-Yf-B4m" id="hdx-wO-EfO"/>
                         <outlet property="textoIntro" destination="gaq-bs-0LT" id="pK9-Y0-a3D"/>
                         <segue destination="LKN-qc-kqY" kind="show" identifier="enterScoreView" id="5uH-IP-vBY"/>
@@ -175,6 +170,7 @@
                         <viewLayoutGuide key="safeArea" id="i1K-wt-egc"/>
                     </view>
                     <connections>
+                        <outlet property="currentPoints" destination="7t3-0U-Tey" id="c8f-z6-qNQ"/>
                         <outlet property="secuenceOrder" destination="wjK-66-Q11" id="V3d-mj-w4o"/>
                     </connections>
                 </viewController>

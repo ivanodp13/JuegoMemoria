@@ -12,6 +12,7 @@
 		7F436A8023507EDD00A620BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F436A7E23507EDD00A620BA /* Main.storyboard */; };
 		7F436A8223507EDD00A620BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F436A8123507EDD00A620BA /* Assets.xcassets */; };
 		7F436A8523507EDD00A620BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F436A8323507EDD00A620BA /* LaunchScreen.storyboard */; };
+		7F4C46832359C11000C5F3DE /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4C46822359C11000C5F3DE /* data.swift */; };
 		7FCE651723546C6200DE69A1 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCE651623546C6200DE69A1 /* ScoreViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		7F436A8123507EDD00A620BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F436A8423507EDD00A620BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F436A8623507EDD00A620BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F4C46822359C11000C5F3DE /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		7FCE651623546C6200DE69A1 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -40,6 +42,7 @@
 		7F436A6E23507EDD00A620BA = {
 			isa = PBXGroup;
 			children = (
+				7F4C46822359C11000C5F3DE /* data.swift */,
 				7F436A7923507EDD00A620BA /* JuegoMemoria */,
 				7F436A7823507EDD00A620BA /* Products */,
 			);
@@ -141,6 +144,7 @@
 				7F436A7D23507EDD00A620BA /* ViewController.swift in Sources */,
 				7F436A7B23507EDD00A620BA /* AppDelegate.swift in Sources */,
 				7FCE651723546C6200DE69A1 /* ScoreViewController.swift in Sources */,
+				7F4C46832359C11000C5F3DE /* data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

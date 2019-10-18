@@ -25,16 +25,14 @@ class ViewController: UIViewController {
         #imageLiteral(resourceName: "img6")
     ]
 
-
+    
     @IBOutlet weak var textoIntro: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
-    @IBOutlet weak var levelSlider: UISlider!
     @IBOutlet weak var StartButton: UIButton!
     @IBOutlet weak var picsSecuence: UIImageView!
     @IBAction func StartButton(_ sender: Any) {
         self.StartButton.isHidden = true
         self.levelLabel.isHidden = true
-        self.levelSlider.isHidden = true
         self.picsSecuence.isHidden = false
         self.textoIntro.isHidden = true
         imageSecuence()
@@ -44,20 +42,20 @@ class ViewController: UIViewController {
         
         //orden aleatorio elemntos array
         imageArray.shuffle()
-        let shuffledIMG = imageArray.shuffled()
+        shuffledIMG = imageArray.shuffled()
         
-        picsSecuence.image = shuffledIMG[0]
+        //picsSecuence.image = shuffledIMG[0]
         
         var seconds: Double = 0
         let secodsToAdvance: Double = 1
-        for i in 1...5 {
+        for i in 0...5 {
             print(i)
             seconds+=secodsToAdvance
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                 //self.picsSecuence.image = shuffledIMG[i]
                 let j = i
                 print ("j: ", j)
-                self.picsSecuence.image = self.imageArray[j]
+                self.picsSecuence.image = shuffledIMG[j]
                 if (j==5){
                     DispatchQueue.main.asyncAfter(deadline: .now() + secodsToAdvance) {
                         self.performSegue(withIdentifier: "enterScoreView", sender: nil)
