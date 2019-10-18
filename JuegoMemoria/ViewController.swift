@@ -13,7 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        showValueSlider.text="Normal"
     }
+    
+    var levelNumber: Int = 0
+    var level: String = ""
+    var levels : Int = 0
+    var secodsToAdvance: Double = 1
     
     //meter imagenes en array
     var imageArray: [UIImage] = [
@@ -26,8 +32,10 @@ class ViewController: UIViewController {
     ]
 
     
+    @IBOutlet weak var showValueSlider: UILabel!
     @IBOutlet weak var textoIntro: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var levelSlider: UISlider!
     @IBOutlet weak var StartButton: UIButton!
     @IBOutlet weak var picsSecuence: UIImageView!
     @IBAction func StartButton(_ sender: Any) {
@@ -35,7 +43,36 @@ class ViewController: UIViewController {
         self.levelLabel.isHidden = true
         self.picsSecuence.isHidden = false
         self.textoIntro.isHidden = true
+        self.levelSlider.isHidden = true
+        self.showValueSlider.isHidden = true
         imageSecuence()
+    }
+    
+
+    @IBAction func levelSliderAction(_ sender: UISlider) {
+        //print(sender)
+        let myIntValue = Int(sender.value)
+        
+        levels = myIntValue
+        
+        switch levels {
+            case 0:
+                level="Fácil"
+                secodsToAdvance=2
+            case 1:
+                level="Normal"
+                secodsToAdvance=1
+            case 2:
+                level="Difícil"
+                secodsToAdvance=0.5
+            default:
+                level="Normal"
+                secodsToAdvance=1
+        }
+        
+        let levelStr = String(level)
+         showValueSlider.text = levelStr
+        
     }
     
     func imageSecuence() {
@@ -47,7 +84,7 @@ class ViewController: UIViewController {
         //picsSecuence.image = shuffledIMG[0]
         
         var seconds: Double = 0
-        let secodsToAdvance: Double = 1
+        //let secodsToAdvance: Double = 1
         for i in 0...5 {
             print(i)
             seconds+=secodsToAdvance
@@ -57,7 +94,7 @@ class ViewController: UIViewController {
                 print ("j: ", j)
                 self.picsSecuence.image = shuffledIMG[j]
                 if (j==5){
-                    DispatchQueue.main.asyncAfter(deadline: .now() + secodsToAdvance) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + self.secodsToAdvance) {
                         self.performSegue(withIdentifier: "enterScoreView", sender: nil)
                     }
                 }
