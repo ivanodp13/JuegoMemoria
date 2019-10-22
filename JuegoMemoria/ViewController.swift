@@ -38,13 +38,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var levelSlider: UISlider!
     @IBOutlet weak var StartButton: UIButton!
     @IBOutlet weak var picsSecuence: UIImageView!
+    @IBOutlet weak var StackViewMain: UIStackView!
     @IBAction func StartButton(_ sender: Any) {
-        self.StartButton.isHidden = true
-        self.levelLabel.isHidden = true
         self.picsSecuence.isHidden = false
-        self.textoIntro.isHidden = true
-        self.levelSlider.isHidden = true
-        self.showValueSlider.isHidden = true
+        self.StackViewMain.isHidden = true
         imageSecuence()
     }
     
@@ -77,7 +74,7 @@ class ViewController: UIViewController {
     
     func imageSecuence() {
         
-        //orden aleatorio elemntos array
+        //orden aleatorio elementos array
         imageArray.shuffle()
         shuffledIMG = imageArray.shuffled()
         
