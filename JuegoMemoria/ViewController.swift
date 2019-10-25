@@ -45,7 +45,6 @@ class ViewController: UIViewController {
         imageSecuence()
     }
     
-
     @IBAction func levelSliderAction(_ sender: UISlider) {
         //print(sender)
         let myIntValue = Int(sender.value)
@@ -68,7 +67,7 @@ class ViewController: UIViewController {
         }
         
         let levelStr = String(level)
-         showValueSlider.text = levelStr
+        showValueSlider.text = levelStr
         
     }
     

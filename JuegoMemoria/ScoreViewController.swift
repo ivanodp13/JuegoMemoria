@@ -125,6 +125,7 @@ class ScoreViewController: UIViewController {
         if (endOfGame==true){
             self.replayButton.isHidden = false
             self.endLabel.isHidden = false
+            self.secuenceOrder.isHidden = true
             
             currentStreakLabel.isHidden = false
             let streakText: String = ("Puntos extras por rachas: \(streakPoints)")
