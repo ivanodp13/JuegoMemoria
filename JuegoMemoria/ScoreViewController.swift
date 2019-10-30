@@ -31,14 +31,14 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak var replayButton: UIButton!
     @IBOutlet weak var currentStreakLabel: UILabel!
     
-    var currentOrder : Int = 1
-    var currentClic : Int = 0
-    var points : Int = 0
-    var endOfGame : Bool = false
-    var consecutive : Int = 0
-    var isRight : Bool = false
-    var consecutiveCount: Int = 0
-    var streakPoints: Int = 0
+    var currentOrder : Int = 1          //Guarda el orden del array en el momento de comprobar la secuencia
+    var currentClic : Int = 0           //Guarda el numero de intento (clic) por el que va el usuario
+    var points : Int = 0                //Guarda los puntos del usuario
+    var endOfGame : Bool = false        //Será true si el juego ha finalizado
+    var consecutive : Int = 0           //Guarda los aciertos consecutivos
+    var isRight : Bool = false          //Será true si el usuario acierta
+    var consecutiveCount: Int = 0       //Guarda el numero de rachas consecutivas
+    var streakPoints: Int = 0           //Puntos extras conseguidos por el usuario por rachas
     
     //Funcion al pulsar el boton 1
     @IBAction func imgButton1(_ sender: UIButton) {

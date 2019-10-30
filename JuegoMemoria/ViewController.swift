@@ -16,10 +16,10 @@ class ViewController: UIViewController {
         showValueSlider.text="Normal"
     }
     
-    var levelNumber: Int = 0
-    var level: String = ""
-    var levels : Int = 0
-    var secodsToAdvance: Double = 1
+    var levelNumber: Int = 0            //Numero del nivel
+    var level: String = ""              //Nombre del nivel
+    var levels : Int = 0                //Numero de nivel dentro del switch de niveles
+    var secodsToAdvance: Double = 1     //Cantidad de segundos a avanzar
     
     //Array de imagenes a mezclar
     var imageArray: [UIImage] = [
