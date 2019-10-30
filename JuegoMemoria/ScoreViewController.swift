@@ -40,20 +40,25 @@ class ScoreViewController: UIViewController {
     var consecutiveCount: Int = 0
     var streakPoints: Int = 0
     
-    
+    //Funcion al pulsar el boton 1
     @IBAction func imgButton1(_ sender: UIButton) {
+        //Introduce en la variable la imagen que contiene el boton
         let buttonImg: UIImage = (sender.imageView?.image!)!
         if (endOfGame==false){
             imgActionButton(imageButton: buttonImg)
         }
     }
+    //Funcion al pulsar el boton 2
     @IBAction func imgButton2(_ sender: UIButton) {
+        //Introduce en la variable la imagen que contiene el botón
         let buttonImg: UIImage = (sender.imageView?.image!)!
         if (endOfGame==false){
             imgActionButton(imageButton: buttonImg)
         }
     }
+    //Funcion al pulsar el boton 3
     @IBAction func imgButton3(_ sender: UIButton) {
+        //Introduce en la variable la imagen que contiene el botón
         let buttonImg: UIImage = (sender.imageView?.image!)!
         if (endOfGame==false){
             imgActionButton(imageButton: buttonImg)
@@ -61,50 +66,63 @@ class ScoreViewController: UIViewController {
     }
     
     
+    //Funcion al pulsar el boton 4
     @IBAction func imgButton4(_ sender: UIButton) {
+        //Introduce en la variable la imagen que contiene el botón
         let buttonImg: UIImage = (sender.imageView?.image!)!
         if (endOfGame==false){
             imgActionButton(imageButton: buttonImg)
         }
     }
+    //Funcion al pulsar el boton 5
     @IBAction func imgButton5(_ sender: UIButton) {
+        //Introduce en la variable la imagen que contiene el botón
         let buttonImg: UIImage = (sender.imageView?.image!)!
         if (endOfGame==false){
             imgActionButton(imageButton: buttonImg)
         }
     }
+    //Funcion al pulsar el boton 6
     @IBAction func imgButton6(_ sender: UIButton) {
+        //Introduce en la variable la imagen que contiene el botón
         let buttonImg: UIImage = (sender.imageView?.image!)!
         if (endOfGame==false){
             imgActionButton(imageButton: buttonImg)
         }
     }
     
+    //Comprobación de las imagenes
     func imgActionButton(imageButton: UIImage){
+        //Controla la posición del array que se va a comparar
         if (currentOrder<6){
             currentOrder+=1
         }
+        //Controla el numero de intentos (clics) realizados
         currentClic+=1
         print ("Current Clic: ",currentClic)
         let currentOrderStr = String(currentOrder)
         secuenceOrder.text = currentOrderStr
         print ("Image: ",imageButton)
         
+        //Botón pulsado en el orden correcto
         if(shuffledIMG[currentClic-1]==imageButton){
             points+=1
             
+            //Muestra que has acertado
             let emoji: String = ("👍")
             let currentEmojiStr = String(emoji)
             currentEmoji.text = currentEmojiStr
             isRight=true
             consecutive+=1
         
+            //Muestra los puntos actuales
             let pointsText: String = ("Puntos: \(points)")
             let currentPointsStr = String(pointsText)
             currentPoints.text = currentPointsStr
             
             streak()
         }else{
+            //Muestra que has fallado
             let emoji: String = ("👎")
             let currentEmojiStr = String(emoji)
             currentEmoji.text = currentEmojiStr
@@ -115,12 +133,14 @@ class ScoreViewController: UIViewController {
             
             streak()
         }
+        //Comprueba si has llegado al fin del juego
         if (currentClic==6){
             endOfGame = true
             endOfGameAction()
         }
     }
     
+    //En caso de fin del juego
     func endOfGameAction(){
         if (endOfGame==true){
             self.replayButton.isHidden = false
@@ -134,8 +154,10 @@ class ScoreViewController: UIViewController {
         }
     }
     
+    //Rachas
     func streak(){
         if (isRight==true){
+            //Si aciertas 2 consecutivas te suma un punto extra
             if (consecutive == 2){
                 points+=1
                 streakPoints+=1
@@ -146,6 +168,7 @@ class ScoreViewController: UIViewController {
                 
                 consecutiveCount+=1
                 
+                //Muestra si estás en racha, y cuantas consecutivas
                 currentStreakLabel.isHidden = false
                 let streakText: String = ("Racha: \(consecutiveCount)")
                 let currentStreakStr = String(streakText)

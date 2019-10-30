@@ -9,13 +9,6 @@
 import Foundation
 import UIKit
 
-var shuffledIMG: [UIImage] = []
 
-/*var imageArray: [UIImage] = [
-    #imageLiteral(resourceName: "img4"),
-    #imageLiteral(resourceName: "img1"),
-    #imageLiteral(resourceName: "img3"),
-    #imageLiteral(resourceName: "img2"),
-    #imageLiteral(resourceName: "img5"),
-    #imageLiteral(resourceName: "img6")
-]*/
+//Array con las imagenes ya mezcladas con la funcion shuffle()
+var shuffledIMG: [UIImage] = []

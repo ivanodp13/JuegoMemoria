@@ -49,7 +49,7 @@
                                         </variation>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="84i-MF-XKK">
-                                        <rect key="frame" x="182.66666666666663" y="227.33333333333331" width="367" height="130.66666666666669"/>
+                                        <rect key="frame" x="184.66666666666663" y="227.33333333333331" width="363" height="130.66666666666669"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="600" id="pCQ-GC-Sve"/>
                                         </constraints>
@@ -116,12 +116,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="xJ8-rN-hHl"/>
                                 <exclude reference="4WH-hD-dhS"/>
                                 <exclude reference="6YW-aU-PnS"/>
                                 <exclude reference="9pU-E0-KFt"/>
                                 <exclude reference="hT4-VK-IRd"/>
                                 <exclude reference="jxI-wl-1vi"/>
-                                <exclude reference="xJ8-rN-hHl"/>
                                 <exclude reference="DaT-y0-Zrh"/>
                                 <exclude reference="P3H-hn-EWH"/>
                                 <exclude reference="bGL-1n-Or4"/>
@@ -144,12 +144,12 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
+                                <include reference="xJ8-rN-hHl"/>
                                 <exclude reference="4WH-hD-dhS"/>
                                 <exclude reference="6YW-aU-PnS"/>
                                 <exclude reference="9pU-E0-KFt"/>
                                 <exclude reference="CMr-Wr-1Jc"/>
                                 <exclude reference="m0Y-2t-LIP"/>
-                                <include reference="xJ8-rN-hHl"/>
                                 <exclude reference="DaT-y0-Zrh"/>
                                 <exclude reference="Dzq-5f-Xcn"/>
                                 <include reference="P3H-hn-EWH"/>
@@ -479,6 +479,8 @@
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">
+                                <exclude reference="BIb-mX-on4"/>
+                                <exclude reference="SBL-yn-3RV"/>
                                 <include reference="2Uh-Ko-Xvi"/>
                                 <exclude reference="8vG-Nc-1vL"/>
                                 <include reference="9hD-u7-Z2b"/>
@@ -487,8 +489,6 @@
                                 <include reference="bjp-Zh-CsV"/>
                                 <exclude reference="dDu-Eo-Yc0"/>
                                 <exclude reference="ooe-P3-aRq"/>
-                                <exclude reference="BIb-mX-on4"/>
-                                <exclude reference="SBL-yn-3RV"/>
                                 <exclude reference="8bg-6k-b3r"/>
                                 <include reference="NSe-el-zFL"/>
                                 <include reference="eNy-dP-izk"/>
@@ -500,6 +500,8 @@
                                 <include reference="w1f-54-gOB"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="BIb-mX-on4"/>
+                                <exclude reference="SBL-yn-3RV"/>
                                 <exclude reference="2Uh-Ko-Xvi"/>
                                 <exclude reference="8vG-Nc-1vL"/>
                                 <exclude reference="PII-dJ-g4y"/>
@@ -507,8 +509,6 @@
                                 <include reference="T5S-m0-QTe"/>
                                 <exclude reference="dDu-Eo-Yc0"/>
                                 <include reference="rC3-W4-ou0"/>
-                                <exclude reference="BIb-mX-on4"/>
-                                <exclude reference="SBL-yn-3RV"/>
                                 <exclude reference="8bg-6k-b3r"/>
                                 <exclude reference="NSe-el-zFL"/>
                                 <include reference="SE1-XP-Qhe"/>

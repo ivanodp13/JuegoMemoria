@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     var levels : Int = 0
     var secodsToAdvance: Double = 1
     
-    //meter imagenes en array
+    //Array de imagenes a mezclar
     var imageArray: [UIImage] = [
         #imageLiteral(resourceName: "img4"),
         #imageLiteral(resourceName: "img1"),
@@ -39,18 +39,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var StartButton: UIButton!
     @IBOutlet weak var picsSecuence: UIImageView!
     @IBOutlet weak var StackViewMain: UIStackView!
+    
+    //Boton de inicio del juego
     @IBAction func StartButton(_ sender: Any) {
         self.picsSecuence.isHidden = false
         self.StackViewMain.isHidden = true
         imageSecuence()
     }
     
+    //Slider de selección de dificultad
     @IBAction func levelSliderAction(_ sender: UISlider) {
-        //print(sender)
         let myIntValue = Int(sender.value)
         
         levels = myIntValue
         
+        //Niveles, contiene el nombre del nivel y la velocidad a la que se mostrarán las imagenes
         switch levels {
             case 0:
                 level="Fácil"
@@ -66,28 +69,31 @@ class ViewController: UIViewController {
                 secodsToAdvance=1
         }
         
+        // Muestra el texto con el nivel seleccionado
         let levelStr = String(level)
         showValueSlider.text = levelStr
         
     }
     
+    //Función que inicia el juego
     func imageSecuence() {
         
-        //orden aleatorio elementos array
+        //Mezcla el array de imagenes con un orden aleatorio
         imageArray.shuffle()
         shuffledIMG = imageArray.shuffled()
         
-        //picsSecuence.image = shuffledIMG[0]
         
         var seconds: Double = 0
-        //let secodsToAdvance: Double = 1
+        
+        //Bucle que recorre el array de imagenes para mostrarlas
         for i in 0...5 {
             print(i)
             seconds+=secodsToAdvance
+            //Añade el codigo que contiene a una cola
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                //self.picsSecuence.image = shuffledIMG[i]
                 let j = i
                 print ("j: ", j)
+                //Muestra la imagen en el imageView
                 self.picsSecuence.image = shuffledIMG[j]
                 if (j==5){
                     DispatchQueue.main.asyncAfter(deadline: .now() + self.secodsToAdvance) {
